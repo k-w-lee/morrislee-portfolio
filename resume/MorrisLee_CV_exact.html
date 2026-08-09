@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morris Lee CV</title>
+<style>
+  :root { --text:#111; --muted:#333; --rule:#1f1f1f; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#f3f3f3; color:var(--text); font-family: Arial, Helvetica, sans-serif; }
+  .page { width: 210mm; min-height: 297mm; margin: 14px auto; padding: 10.5mm 14mm 11mm; background:white; box-shadow:0 1px 8px rgba(0,0,0,.12); font-size:10.4pt; line-height:1.22; }
+  .page + .page { page-break-before: always; }
+  h1 { font-size:20pt; margin:0 0 2px; letter-spacing:.1px; }
+  .contact { margin-bottom:8px; }
+  a { color:inherit; text-decoration:underline; text-underline-offset:1px; }
+  .section-title { font-size:12.2pt; font-weight:700; border-bottom:1.4px solid var(--rule); margin:7px 0 4px; padding-bottom:1px; }
+  .skills-row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin:1px 0; }
+  .row { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:3px; }
+  .company { font-weight:700; }
+  .role { font-weight:700; }
+  .place { font-weight:400; }
+  .date { white-space:nowrap; }
+  ul { margin:2px 0 4px 17px; padding:0; }
+  li { margin:1px 0; padding-left:1px; }
+  .edu-line { display:grid; grid-template-columns: 1fr auto; gap:12px; }
+  .pub { margin:3px 0; text-indent:-16px; padding-left:16px; }
+  @media print {
+    body { background:white; }
+    .page { margin:0; box-shadow:none; width:auto; min-height:auto; }
+  }
+</style>
+</head>
+<body>
+<section class="page">
+  <h1>MORRIS LEE</h1>
+  <div class="contact">
+    <a href="https://www.linkedin.com/in/morris-lee-917b6a14a/">[LinkedIn]</a>
+    <a href="https://github.com/k-w-lee">[GitHub]</a>
+    <a href="https://www.kaggle.com/leekahwin">[Kaggle]</a>
+    info.leekahwin@gmail.com&nbsp;&nbsp;+60183201961&nbsp;&nbsp;Kuala Lumpur
+  </div>
+
+  <div class="section-title">Skills</div>
+  <div class="skills-row"><div><strong>Programming Languages:</strong>&nbsp;&nbsp;Python, SQL</div><div><strong>Spoken Languages:</strong>&nbsp;&nbsp;English, Chinese, Malay</div></div>
+  <div><strong>Analytics &amp; Cloud:</strong>&nbsp;&nbsp;SQL, Spark, Pandas, Databricks, AWS EC2, AWS S3, Azure, Git, Power BI, Tableau</div>
+  <div><strong>ML Systems:</strong>&nbsp;&nbsp;Agentic AI, Production ML Pipelines, Recommender Systems at Scale</div>
+
+  <div class="section-title">Experience</div>
+  <div class="row"><div class="company">MERCEDES-BENZ, <span class="place">Puchong, Malaysia</span></div></div>
+  <div class="row"><div class="role">Data Scientist (EV Team, work closely with MB AG and Germany AI Team)</div><div class="date">Jan 2024 – Present</div></div>
+  <ul>
+    <li>Owned and built end-to-end Mercedes-Benz’s first production LLM charging system using Azure, Databricks and Spark that resolves ambiguous charging-station matches, processing ~1,200 pairs/min across 60+ countries,</li>
+    <li>Built production ETL pipelines that classify DC chargers as 400V/800V from live charging-session telemetry via majority-vote consensus (Spark, Delta Lake, MongoDB), live across EMEA.</li>
+    <li>Product Owner for EV Golden Dataset; led 3 engineers building an LLM pipeline that converted 81 MongoDB collections into a confidence-scored data catalog for AI agents, enabling instant discovery of data metadata,</li>
+    <li>Led Code2Diagram in a team of 4, an Azure OpenAI/Python system generating architecture diagrams and documentation from enterprise codebases; deployed internally to ~50 Mercedes-Benz engineers.</li>
+    <li>Won the 2024 Game Changer Award (1/200+) <a href="https://www.linkedin.com/posts/morris-lee-917b6a14a_mercedes-benz-mbtmy-activity-7230004086555729920-xDd2?utm_source=share&amp;utm_medium=member_desktop">[Award]</a> and national HR innovation recognition <a href="https://www.linkedin.com/posts/mercedes-benz-malaysia_mercedesbenzmalaysia-mercedesbenztechmalaysia-activity-7254412013831901184-eRAc?utm_source=share&amp;utm_medium=member_desktop">[Award]</a>; appointed Malaysia’s hub AI representative after co-organising AI-sharing initiatives across five countries <a href="https://www.linkedin.com/posts/mercedes-benz-malaysia_life-at-work-fuelling-innovation-mercedes-benz-activity-7460952030564761600-Ncfr?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACQfkqMBmf3ir040WSHydWO08OwxGwjwv1o">[Recognition]</a>.</li>
+  </ul>
+
+  <div class="row"><div class="company">DEEPDATAFUSION, <span class="place">Remote</span></div></div>
+  <div class="row"><div class="role">Founder (Part-Time) | <a href="https://s3.ap-southeast-1.amazonaws.com/safe-ai.io/public/freight-recovery.mp4">[Demo Claims Recovery]</a> | <a href="https://s3.ap-southeast-1.amazonaws.com/safe-ai.io/public/deepdatafusion.mp4">[Demo Super Consolidator]</a></div><div class="date">Oct 2023 – Aug 2026</div></div>
+  <ul>
+    <li>Built a rule-gated 7B analytics agent with deterministic post-execution verification outperforming a 32B baseline by +24 pp business-truth rate at 71% lower cost/correct answer on a pre-registered, one-shot 400-task benchmark, cutting false-success 75%→35%, zero silent wrong answers on answerable tasks [arXiv] [GitHub].</li>
+    <li>Built an end-to-end AI platform to identify missed logistics charges, generate evidence-backed recovery claims, and support consolidation analysis; paused after technical validation to avoid ongoing infrastructure costs.</li>
+  </ul>
+
+  <div class="row"><div class="company">RECOMMEND.MY, <span class="place">Petaling Jaya, Malaysia</span></div></div>
+  <div class="row"><div class="role">Data Scientist</div><div class="date">Nov 2022 – Jan 2024</div></div>
+  <ul>
+    <li>Owned and built end to end 30+ production ML/AI systems including using LLM to enrich image description for optimising SEO, automated outbound sales, dynamic pricing, ML-powered retention system (F1 &gt; 90%) and pricing optimization engine, reducing annual churn (Python, AWS EC2, SQL, Slack API, Sheet API).</li>
+    <li>Drove 40% YoY revenue growth, achieving first profitable month in 9 years.</li>
+    <li>Youngest best employee 2022 <a href="https://www.linkedin.com/posts/jes-min-lua-540993a_every-year-recommenders-nominate-their-colleagues-activity-7016040311030243328-NipA?utm_source=share&amp;utm_medium=member_desktop">[Award]</a> and 2023 <a href="https://drive.google.com/file/d/1OaMqlYAMGVO7AtZImI4kv3xJ2Ek4XclI/view?usp=sharing">[Award]</a> (voted by 20+ colleagues). <a href="https://www.linkedin.com/feed/update/urn:li:activity:7016040311030243328/">[CEO Testimonial]</a>.</li>
+  </ul>
+  <div class="row"><div class="role">Data Analytics Executive</div><div class="date">Mar 2022 - Oct 2022</div></div>
+  <ul><li>Automated 10+ reporting pipelines (MySQL, Python ‚Google Sheets/Slack). Built 14+ dashboards tracking metrics.</li></ul>
+
+  <div class="section-title">Education</div>
+  <div class="edu-line"><div><strong>Master of Science (Data Science and Analytics)</strong>&nbsp;&nbsp;Universiti Sains Malaysia</div><div>Graduated: Jul 2022</div></div>
+  <div>CGPA: 3.94/4.0&nbsp;&nbsp; Highlight: Led 5 subject teams; 2 projects top scores in CDS501 &amp; CDS504 <a href="https://drive.google.com/file/d/1iL0vN-L-TAjVHp2TgG-FnflL7AX_GrBD/view?usp=sharing">[Transcript]</a></div>
+  <div class="edu-line"><div><strong>Bachelor of International Business (Honours)</strong>&nbsp;&nbsp;Universiti Tunku Abdul Rahman</div><div>Graduated: May 2019</div></div>
+
+  <div class="section-title">Leadership and Community Engagement</div>
+  <ul>
+    <li>Core contributor to BrowserUse. AI browser automation. 100K+ stars <a href="https://github.com/browser-use/browser-use">[Github]</a> <a href="https://drive.google.com/file/d/1stCOYDV0EnjlwP7Z8AOLXmNaPPIWeklm/view?usp=drivesdk">[Proof]</a>.&nbsp;&nbsp;Dec 2024 – Mar 2025</li>
+    <li>Kaggle Master <a href="https://www.kaggle.com/leekahwin">[Award]</a>. Ranked #228 over 60,000. Top 0.3% <a href="https://www.kaggle.com/code/mpwolke/ig-nobellians-winners">[Kaggle Testimonial]</a>.&nbsp;&nbsp;Sep 2020 – Nov 2023</li>
+    <li>Published 4 Python packages on PyPI filling AI community gaps. <a href="https://pypi.org/user/morris_lee/">[PyPI profile]</a>.&nbsp;&nbsp;Jun 2022 – Jan 2024</li>
+    <li>Guest Speaker, Sunway University <a href="https://www.linkedin.com/posts/sunway-analytics-society_sunwayanalyticssociety-sunwayuniversity-sunwaycollege-activity-7350373485866610690-4QC8?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACQfkqMBmf3ir040WSHydWO08OwxGwjwv1o">[Event Announcement 1]</a>, <a href="https://www.linkedin.com/posts/sunway-analytics-society_sunwayanalyticssociety-sunwayuniversity-sunwaycollege-ugcPost-7483145649962749953-IfiU/?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAACQfkqMBmf3ir040WSHydWO08OwxGwjwv1o">[Event Announcement 2]</a>.&nbsp;&nbsp;Sep 2025 – Jul 2026</li>
+    <li>Vice President and Charter Member of a Toastmaster group, MB Elevate. <a href="https://drive.google.com/file/d/18rElRfTuXbCvMZHIYckVkO6olNcyzrm_/view?usp=sharing">[Certificate]</a>.&nbsp;&nbsp;Sep 2025 – Present</li>
+  </ul>
+</section>
+
+<section class="page">
+  <div class="section-title">Research Publications</div>
+  <div class="pub">(1) Lee, K. W., Keikhosrokiani, et al. (2024). … Movie Recommendations with Market Basket Analysis and Advanced Algorithms. (pp. 319-364). IGI Global, doi: 10.4018/979-8-3693-1210-0.ch013. <a href="https://doi.org/10.4018/979-8-3693-1210-0.ch013">[Publication]</a></div>
+  <div class="pub">(2) Lee. K. W., and G. K. Hoon (2022). Text Classification of Medical Transcriptions using N-Gram Machine Learning Approach (pp. 1-6). IICAIET, doi: 10.1109/IICAIET55139.2022.9936867. <a href="https://ieeexplore.ieee.org/document/9936867">[Publication]</a></div>
+</section>
+</body>
+</html>
