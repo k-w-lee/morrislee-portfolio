@@ -23,7 +23,21 @@
     }
     .links {
       font-size: 16px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 18px;
       margin-bottom: 2em;
+    }
+    .avatar {
+      height: 4.5em;
+      width: 4.5em;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .header-text h1 {
+      margin: 0 0 6px;
     }
 
     /* timeline: logo + year in left gutter, continuous rail, content right */
@@ -93,17 +107,21 @@
 </head>
 <body>
 
-<h1>Morris Lee</h1>
-
-<div class="links">
-  <a href="https://github.com/k-w-lee">GitHub</a> ·
-  <a href="https://www.linkedin.com/in/morris-lee-917b6a14a/">LinkedIn</a> ·
-  <a href="https://www.kaggle.com/leekahwin">Kaggle</a> ·
-  <a href="https://pypi.org/user/morris_lee/">PyPI</a> ·
-  <a href="mailto:info.leekahwin@gmail.com">Email</a>
+<div class="header">
+  <img class="avatar" src="{{ url_for('static', filename='profile_pic.jpeg') }}" alt="Morris Lee">
+  <div class="header-text">
+    <h1>Morris Lee</h1>
+    <div class="links">
+      <a href="https://github.com/k-w-lee">GitHub</a> ·
+      <a href="https://www.linkedin.com/in/morris-lee-917b6a14a/">LinkedIn</a> ·
+      <a href="https://www.kaggle.com/leekahwin">Kaggle</a> ·
+      <a href="https://pypi.org/user/morris_lee/">PyPI</a> ·
+      <a href="mailto:info.leekahwin@gmail.com">Email</a>
+    </div>
+  </div>
 </div>
 
-<h2>I like to build AI systems that actually work in the real world. 🤖</h2>
+<h2>I like to build AI systems that actually work in the real world.</h2>
 
 <div class="timeline">
 
@@ -123,9 +141,9 @@
       <span class="year">2024 – 2026</span>
     </div>
     <div class="entry-body">
-      <p>My independent AI engineering and research work (open-sourced selected works). </p>
+      <p>My independent AI engineering and research open-sourced work. </p>
       <p>Built <strong>QueryProof</strong>, a rule-gated 7B analytics agent outperforming a 32B baseline with <strong>+24 pp business-truth rate</strong> at <strong>71% lower cost</strong> on a pre-registered 400-task benchmark. → <a href="https://github.com/k-w-lee/query_proof">GitHub</a></p>
-      <p>Top contributor to <strong>BrowserUse</strong> (open-source AI browser automation) as it grew from ~60K to 100K+ GitHub stars. Both part of <strong>DeepDataFusion</strong></p>
+      <p>Top contributor to <strong>BrowserUse</strong> (open-source AI browser automation) as it grew from ~60K to 100K+ GitHub stars.</p>
     </div>
   </div>
 
@@ -151,6 +169,8 @@
   </div>
 
 </div>
+
+<p>Morris Lee holds a Master's degree in Data Science and is a Kaggle Notebook Master. He is a core contributor to <a href="https://github.com/browser-use/browser-use">BrowserUse</a> (100K+ GitHub stars) and first author of 2 AI research publications. As a Data Scientist, he was voted Best Employee in two consecutive years.</p>
 
 </body>
 </html>

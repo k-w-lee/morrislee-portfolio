@@ -2,7 +2,7 @@ i want to use https://karpathy.ai style for my portfolio. Use html and css only 
 
 # Morris Lee
 
-## I like to build AI systems that actually work in the real world. 🤖
+## I like to build AI systems that actually work in the real world.
 
 **2024 –**
 
