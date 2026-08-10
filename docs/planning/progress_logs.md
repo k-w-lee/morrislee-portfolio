@@ -14,6 +14,26 @@
 
 ---
 
+## Phase 4 — Flask app + timeline visual + logos (status: done, 2026-08-10)
+- **Deliverable:** Convert the static page into a Flask app; add a visible timeline (vertical rail + year nodes) and inline company logos per `media/logos/`.
+- **What was built:**
+  - `app.py` (single route, debug server on :8000), `requirements.txt` (flask==3.1.3), `.venv/` (gitignored)
+  - `templates/index.html` — same narrative, now with a CSS timeline (left rail, circle nodes per year block) and inline logos (Mercedes-Benz, Recommend.my) sized at 1.1em next to company names
+  - `static/logos/` — copies of the three logos from `media/logos/`
+  - `vercel.json` — `@vercel/python` build + catch-all route to `app.py`
+- **Key decisions:**
+  - Timeline implemented in pure CSS (border-left + ::before dots) — no JS, keeps karpathy minimalism
+  - `maybank.png` copied but intentionally unused — no Maybank entry exists in the narrative; needs owner direction on where it belongs
+  - Logos duplicated into `static/` (Flask convention) rather than serving `media/` directly — keeps source assets separate from web assets
+- **Verification:** Flask dev server; curl 200 on page + static logo; Playwright screenshots at 1280px and 390px reviewed
+- **Commits:** 6c818b9
+- **Known issues / follow-ups:**
+  - Maybank logo unused (no narrative entry)
+  - QueryProof Paper/Project links still missing URLs
+  - Vercel deploy not yet tested with `@vercel/python`
+
+---
+
 ## Phase 3 — Course change: karpathy.ai-style plain HTML (status: done, 2026-08-10)
 - **Deliverable:** Replace the React/Vite site with a minimal single-page plain HTML + CSS site in karpathy.ai style, per `course-change.md`.
 - **What was built:**

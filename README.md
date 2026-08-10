@@ -11,12 +11,14 @@ Non-goals: heavy sales and marketing vibes, animated blobs, huge slogans, glowin
 
 ## Development
 
-No build step. Open `index.html` in a browser, or serve the folder:
-
 ```bash
-python3 -m http.server 8000
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python app.py   # serves on http://127.0.0.1:8000 with debug reload
 ```
 
-Deploy: any static host. On Vercel, import the repo with framework preset "Other" — `index.html` at the root is served automatically.
+Structure: `app.py` (routes), `templates/index.html` (page), `static/logos/` (assets).
+
+Deploy: `vercel.json` routes all traffic to `app.py` via `@vercel/python`. Import the repo on Vercel and it deploys as a Python serverless app.
 
 History: a Vite + React + Tailwind version of this site exists in git history (pre-2026-08-10 commits) if ever needed.
