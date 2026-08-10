@@ -14,6 +14,25 @@
 
 ---
 
+## Phase 3 — Course change: karpathy.ai-style plain HTML (status: done, 2026-08-10)
+- **Deliverable:** Replace the React/Vite site with a minimal single-page plain HTML + CSS site in karpathy.ai style, per `course-change.md`.
+- **What was built:**
+  - `index.html` at repo root — narrative timeline (2024–, 2026–, 2024–2025, 2022–2024, 2020–2023), links row (GitHub · LinkedIn · Kaggle · PyPI · Email), inline minimal CSS (650px column, 18px, #444 text, #0645ad blue links)
+  - Deleted React app: `src/`, `public/`, `package.json`, `package-lock.json`, `vite.config.js`, `.oxlintrc.json`, `node_modules/`, `dist/` (recoverable in git history, commit 61fa24e)
+  - README updated (plain HTML, no build step)
+- **Key decisions:**
+  - Owner chose full replacement over branch/subfolder archive (confirmed via question)
+  - Page scope: narrative + links only; CV link removed from page (confirmed); `resume/` and `media/` source files kept in repo but no longer served
+  - QueryProof links: only GitHub URL provided (https://github.com/k-w-lee/query_proof) — Paper/Project placeholders omitted for honesty rather than shown as dead links
+  - SEO: semantic h1/h2, meta description, no JS dependency
+- **Verification:** rendered locally and screenshot-reviewed at desktop + mobile widths
+- **Commits:** b19324f
+- **Known issues / follow-ups:**
+  - QueryProof Paper/Project links still missing URLs
+  - `course-change.md` left at repo root (working notes) — move to `docs/planning/` if desired
+
+---
+
 ## Phase 2 — IA overhaul + interaction polish (status: done, 2026-08-09)
 - **Deliverable:** Restructure from résumé-mirror to technical portfolio: Selected Work first, condensed Experience, artifact metadata, stat blocks. Plus interaction polish (hover arrows, copy-email, auto-hiding nav).
 - **What was built:**
