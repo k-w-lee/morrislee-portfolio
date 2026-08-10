@@ -8,7 +8,7 @@
   <style>
     body {
       margin: 40px auto;
-      max-width: 650px;
+      max-width: 900px;
       line-height: 1.6;
       font-size: 18px;
       color: #444;
@@ -25,42 +25,69 @@
       font-size: 16px;
       margin-bottom: 2em;
     }
-    .logo {
-      height: 1.1em;
-      width: 1.1em;
-      vertical-align: -0.15em;
-      border-radius: 3px;
-    }
 
-    /* timeline */
+    /* timeline: logo + year in left gutter, continuous rail, content right */
     .timeline {
-      border-left: 2px solid #ddd;
-      margin-left: 6px;
-      padding-left: 26px;
-    }
-    .entry {
       position: relative;
-      margin-bottom: 2.4em;
     }
-    .entry::before {
+    .timeline::before {
       content: "";
       position: absolute;
-      left: -33px;
-      top: 0.45em;
+      left: 128px;
+      top: 1em;
+      bottom: 4em;
+      width: 2px;
+      background: #ddd;
+    }
+    .entry {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 2.6em;
+    }
+    .entry-side {
+      width: 100px;
+      flex: none;
+      text-align: center;
+    }
+    .entry-logo {
+      display: block;
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      margin: 0 auto 8px;
+    }
+    .entry .year {
+      font-weight: bold;
+      color: #111;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+    .entry-body {
+      position: relative;
+      padding-left: 28px;
+    }
+    .entry-body::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: 0.5em;
       width: 10px;
       height: 10px;
       background: #fff;
       border: 2px solid #999;
       border-radius: 50%;
     }
-    .entry .year {
-      display: block;
-      font-weight: bold;
-      color: #111;
-      margin-bottom: 0.4em;
+    .entry-body p {
+      margin: 0.5em 0;
     }
-    .entry p {
-      margin: 0.6em 0;
+
+    @media (max-width: 640px) {
+      .timeline::before { left: 80px; }
+      .entry { gap: 16px; }
+      .entry-side { width: 64px; }
+      .entry-logo { width: 48px; height: 48px; }
+      .entry .year { font-size: 13px; }
+      .entry-body { padding-left: 18px; }
     }
   </style>
 </head>
@@ -81,37 +108,53 @@
 <div class="timeline">
 
   <div class="entry">
-    <span class="year">2024 –</span>
-    <p>I am a Data Scientist at <img class="logo" src="{{ url_for('static', filename='logos/mercedes.png') }}" alt="Mercedes-Benz logo"> <strong>Mercedes-Benz</strong>, working on AI and data systems for electric-vehicle charging. I have built production LLM and data systems spanning 60+ countries, including an LLM-based charging-station matching system, EV charging intelligence pipelines, and an AI-ready data catalog. I also led <strong>Code2Diagram</strong>, an internal AI system used by ~50 engineers, and received Mercedes-Benz's <strong>2024 Game Changer Award</strong>.</p>
-    <p>Along the way, I became increasingly interested in a simple question: <strong>how do we know when an AI agent's answer is actually correct?</strong></p>
+    <div class="entry-side">
+      <img class="entry-logo" src="{{ url_for('static', filename='logos/mercedes.png') }}" alt="Mercedes-Benz logo">
+      <span class="year">2024 –</span>
+    </div>
+    <div class="entry-body">
+      <p>Data Scientist at <strong>Mercedes-Benz</strong> — production LLM and data systems for EV charging across 60+ countries. Led <strong>Code2Diagram</strong>, an internal AI system used by ~50 engineers. Received the <strong>2024 Game Changer Award</strong>.</p>
+    </div>
   </div>
 
   <div class="entry">
-    <span class="year">2026 –</span>
-    <p>That question led me to build <strong>QueryProof</strong>, a rule-gated 7B analytics agent with deterministic post-execution verification. On a pre-registered 400-task benchmark, it outperformed a 32B baseline by <strong>+24 percentage points in business-truth rate</strong> while reducing cost per correct answer by <strong>71%</strong>.</p>
-    <p>→ <a href="https://github.com/k-w-lee/query_proof">GitHub</a></p>
-    <p>I built it as part of <strong>DeepDataFusion</strong>, my independent AI engineering and research work. I originally explored DeepDataFusion as a commercial platform for recovering missed logistics charges, later discontinuing the commercial product while open-sourcing selected research and systems.</p>
+    <div class="entry-side">
+      <img class="entry-logo" src="{{ url_for('static', filename='logos/deepdatafusion.jpeg') }}" alt="DeepDataFusion logo">
+      <span class="year">2026 –</span>
+    </div>
+    <div class="entry-body">
+      <p>Built <strong>QueryProof</strong>, a rule-gated 7B analytics agent with deterministic post-execution verification: <strong>+24 pp business-truth rate</strong> over a 32B baseline at <strong>71% lower cost</strong> per correct answer on a pre-registered 400-task benchmark.</p>
+      <p>Part of <strong>DeepDataFusion</strong>, my independent AI engineering and research work. → <a href="https://github.com/k-w-lee/query_proof">GitHub</a></p>
+    </div>
   </div>
 
   <div class="entry">
-    <span class="year">2024 – 2025</span>
-    <p>I contributed to <strong>BrowserUse</strong>, the open-source AI browser automation project, and was among its top contributors during a period when the repository grew from roughly 60K to more than 100K GitHub stars.</p>
-    <p>This was also when most of my work shifted from traditional machine learning toward <strong>LLM agents, evaluation, RAG, data infrastructure, and production AI systems</strong>.</p>
+    <div class="entry-side">
+      <span class="year">2024 – 2025</span>
+    </div>
+    <div class="entry-body">
+      <p>Top contributor to <strong>BrowserUse</strong> (open-source AI browser automation) as it grew from ~60K to 100K+ GitHub stars. My work shifted from traditional ML toward <strong>LLM agents, evaluation, RAG, and production AI systems</strong>.</p>
+    </div>
   </div>
 
   <div class="entry">
-    <span class="year">2022 – 2024</span>
-    <p>Before Mercedes-Benz, I was a Data Scientist at <img class="logo" src="{{ url_for('static', filename='logos/recommendmy.png') }}" alt="Recommend.my logo"> <strong>Recommend.my</strong>, where I built more than 20 ML and automation systems across recommendations, pricing, retention, sales, and SEO.</p>
-    <p>It was a small-company environment, so I learned to work end-to-end: finding the problem, querying the data, training the model, deploying it on AWS, and seeing whether it actually improved the business.</p>
-    <p>During this period, I also published several Python packages and continued competing on Kaggle.</p>
+    <div class="entry-side">
+      <img class="entry-logo" src="{{ url_for('static', filename='logos/recommendmy.png') }}" alt="Recommend.my logo">
+      <span class="year">2022 – 2024</span>
+    </div>
+    <div class="entry-body">
+      <p>Data Scientist at <strong>Recommend.my</strong> — built 20+ ML and automation systems end-to-end (recommendations, pricing, retention, sales, SEO), from query to deployment on AWS to measured business impact.</p>
+    </div>
   </div>
 
   <div class="entry">
-    <span class="year">2020 – 2023</span>
-    <p>I got seriously into machine learning while studying for my MSc in Data Science &amp; Analytics at <strong>Universiti Sains Malaysia</strong>, graduating with a <strong>3.94/4.00 CGPA</strong>.</p>
-    <p>I spent an unreasonable amount of time on Kaggle and eventually became a <strong>Kaggle Master</strong>, reaching <strong>#228 out of 60,000+ competitors</strong>.</p>
-    <p>My early research focused on applied machine learning, including work on <strong>medical-text classification</strong> and <strong>recommendation systems</strong>.</p>
-    <p>And that is roughly how I went from business → data → machine learning → building AI systems.</p>
+    <div class="entry-side">
+      <span class="year">2020 – 2023</span>
+    </div>
+    <div class="entry-body">
+      <p>MSc Data Science &amp; Analytics, <strong>Universiti Sains Malaysia</strong> — <strong>3.94/4.00 CGPA</strong>. Became a <strong>Kaggle Master</strong> (#228 of 60,000+). Early research: medical-text classification and recommendation systems.</p>
+      <p>And that is roughly how I went from business → data → machine learning → building AI systems.</p>
+    </div>
   </div>
 
 </div>
